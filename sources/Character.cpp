@@ -9,7 +9,18 @@ Character::Character(Character& other)
     : name(other.name), location(other.location), healthPoints(other.healthPoints) {}  
 // Destructor   
 Character::~Character() {}
-
+  // Implement Character move
+Character::Character(Character&& other) noexcept
+    : name(std::move(other.name)), location(other.location), healthPoints(other.healthPoints) {
+}
+Character& Character::operator=(Character&& other) noexcept {
+    if (this != &other) {
+        name = std::move(other.name);
+        location = other.location;
+        healthPoints = other.healthPoints;
+    }
+    return *this;
+}
  bool Character:: isAlive(){
     return this->healthPoints>0;
  }
