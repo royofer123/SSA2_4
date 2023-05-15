@@ -16,7 +16,7 @@ using namespace std;
     return this->yCord; 
  }
    
- double Point::distance(Point &other){
+ double Point::distance(Point other){
     double xDiff=other.getX()-this->xCord;
     double yDiff=other.getY()-this->yCord;
     return sqrt(xDiff*xDiff+yDiff*yDiff);
@@ -24,7 +24,7 @@ using namespace std;
  void Point:: print(){
     cout<< "(" << this->xCord << "," <<this->yCord <<")"<<endl;
  }
- Point moveTowards(Point &source, Point &destination, double distance){
+ Point  Point::moveTowards(Point &source, Point &destination, double distance){
     double totalDistance=source.distance(destination);
     if(totalDistance<=distance) return destination;
     else {

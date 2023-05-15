@@ -10,9 +10,9 @@ namespace ariel{
         double getX() const;
         double getY() const;
         Point(double xCord, double yCord);
-        double distance(Point &other);
+        double distance(Point other);
         void print();
-        Point moveTowards(Point &source, Point &destination, double distance);
+        static Point moveTowards(Point &source, Point &destination, double distance);
         friend bool operator==(const Point &pointA, const Point &pointB);
         
     };

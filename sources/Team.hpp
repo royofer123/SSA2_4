@@ -4,6 +4,9 @@
 #include "Character.hpp"
 #include "Cowboy.hpp"
 #include "Ninja.hpp"
+#include "OldNinja.hpp"
+#include "TrainedNinja.hpp"
+#include "YoungNinja.hpp"
 #include "Point.hpp"
 #include "Team2.hpp"
 #include <iostream>
