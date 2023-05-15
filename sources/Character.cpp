@@ -3,7 +3,7 @@
 using namespace ariel;
 using namespace std;
 // Constructor
-Character::Character(string name, Point& location, int healthPoints):name(name) , location(location), healthPoints(healthPoints){ }
+Character::Character(string name, Point &location, int healthPoints):name(name) , location(location), healthPoints(healthPoints){ }
 // Copy Constructor
 Character::Character(Character& other)
     : name(other.name), location(other.location), healthPoints(other.healthPoints) {}  

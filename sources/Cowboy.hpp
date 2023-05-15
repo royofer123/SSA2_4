@@ -11,7 +11,7 @@ namespace ariel {
         private:
         int bulletsLeft;
         public:
-        Cowboy(string name, Point &location);
+        Cowboy(string name, Point location);
         ~Cowboy()= default;
         bool hasboolets();
         void reload();

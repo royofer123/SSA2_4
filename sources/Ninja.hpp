@@ -12,7 +12,7 @@ namespace ariel {
         private:
         int speed;
         public:
-       Ninja(string name, int hit_point,Point& location, int speed): Character(name, location, hit_point) , speed(speed){}
+       Ninja(string name, int hit_point,Point location, int speed): Character(name, location, hit_point) , speed(speed){}
        // Ninja(Ninja&& other) noexcept   : Character(std::move(other)), speed(std::__exchange(other.speed, 0)) {}
         ~Ninja() = default; 
         virtual void move(Character *other);
