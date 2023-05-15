@@ -12,7 +12,7 @@ namespace ariel {
         int bulletsLeft;
         public:
         Cowboy(string name, Point location);
-        ~Cowboy()= default;
+        ~Cowboy() override;
         bool hasboolets();
         void reload();
         void shoot(Character *enemey);
