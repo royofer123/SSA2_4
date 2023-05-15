@@ -14,7 +14,7 @@ namespace ariel {
         public:
        Ninja(string name, int hit_point,Point location, int speed): Character(name, location, hit_point) , speed(speed){}
        // Ninja(Ninja&& other) noexcept   : Character(std::move(other)), speed(std::__exchange(other.speed, 0)) {}
-        ~Ninja() override;
+        ~Ninja() = default; 
         virtual void move(Character *other);
         virtual void slash(Character *other);
         string print() override;
