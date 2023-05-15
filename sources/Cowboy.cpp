@@ -5,7 +5,6 @@ using namespace ariel;
 Cowboy::Cowboy(string name, Point& location) : Character(name, location, 110), bulletsLeft(6) {
 
 }
-//Cowboy::~Cowboy(){}
 
 bool Cowboy::hasboolets() {
     return bulletsLeft > 0;

@@ -7,8 +7,6 @@ Character::Character(string name, Point& location, int healthPoints):name(name) 
 // Copy Constructor
 Character::Character(Character& other)
     : name(other.name), location(other.location), healthPoints(other.healthPoints) {}  
-// Destructor   
-Character::~Character() {}
   // Implement Character move
 Character::Character(Character&& other) noexcept
     : name(std::move(other.name)), location(other.location), healthPoints(other.healthPoints) {

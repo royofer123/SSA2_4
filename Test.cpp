@@ -2,7 +2,6 @@
 #include <cassert>
 #include <sstream>
 #include "doctest.h"
-#include "sources/Character.hpp"
 #include "sources/Team.hpp"
 
 using namespace std;

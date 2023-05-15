@@ -12,9 +12,9 @@ namespace ariel {
         private:
         int speed;
         public:
-        Ninja(string&& name, int healthPoints, Point location, int speed) : Character(std::move(name), location, healthPoints), speed(speed) {}
+       Ninja(string name, int hit_point,Point& location, int speed): Character(name, location, hit_point) , speed(speed){}
        // Ninja(Ninja&& other) noexcept   : Character(std::move(other)), speed(std::__exchange(other.speed, 0)) {}
-       // ~Ninja() override;
+        ~Ninja() = default; 
         virtual void move(Character *other);
         virtual void slash(Character *other);
         string print() override;
@@ -22,15 +22,15 @@ namespace ariel {
     };
     class OldNinja:public Ninja{
         public:
-        OldNinja(string&& name , Point location);
+        OldNinja(string name , Point location);
     };
-       class YountNinja:public Ninja{
+       class YoungNinja:public Ninja{
         public:
-        YountNinja(string&& name , Point location);
+        YoungNinja(string name , Point location);
     };
        class TrainedNinja:public Ninja{
         public:
-        TrainedNinja(string&& name , Point location);
+        TrainedNinja(string name , Point location);
     };
 };
  #endif

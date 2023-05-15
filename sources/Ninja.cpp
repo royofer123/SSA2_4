@@ -2,7 +2,7 @@
 
 using namespace ariel;
 
-//Ninja::~Ninja() {}
+
 
 void Ninja::move(Character* other) {
     
@@ -21,9 +21,9 @@ int Ninja::getSpeed() {
     return this->speed;
 }
 
-OldNinja::OldNinja(string&& name, Point location) : Ninja(std::move(name), 150, location, 8) {}
+OldNinja::OldNinja(string name, Point location) : Ninja((name), 150,location,  8) {}
 
-YountNinja::YountNinja(string&& name, Point location) : Ninja(std::move(name), 100, location, 14) {}
+YoungNinja::YoungNinja(string name, Point location) : Ninja((name), 100,location,  14) {}
 
-TrainedNinja::TrainedNinja(string&& name, Point location) : Ninja(std::move(name), 120, location, 12) {}
+TrainedNinja::TrainedNinja(string name, Point location) : Ninja((name),120, location, 12) {}
 
