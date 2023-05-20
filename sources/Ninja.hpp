@@ -2,24 +2,27 @@
 #define NINJA_HPP
 
 #include "Character.hpp"
-#include "Point.hpp"
 #include <iostream>
 #include <string>
 using namespace std;
+
+const int NINJA_DMG=40;
 
 namespace ariel {
     class Ninja: public Character{
         private:
         int speed;
+        protected:
+        int getSpeed() const;
+        //Constructor
+        Ninja(const std::string &name,Point location, const int healthPoints, int speed) :
+            Character(name, location, healthPoints), speed(speed) {}
         public:
-       Ninja(string name, int hit_point,Point location, int speed): Character(name, location, hit_point) , speed(speed){}
-       // Ninja(Ninja&& other) noexcept   : Character(std::move(other)), speed(std::__exchange(other.speed, 0)) {}
-        ~Ninja() = default; 
-        virtual void move(Character *other);
-        virtual void slash(Character *other);
-        string print() override;
-        int getSpeed();  
+        //methods
+        void slash (Character *other) const;
+        void move (Character *other);
+        ///print override method
+        string print() const override;
     };
-
 };
  #endif

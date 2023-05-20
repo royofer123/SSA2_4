@@ -5,19 +5,26 @@
 #include <iostream>
 #include <string>
 using namespace std;
+//Cowboy defualt character
+const int BULLETS_AMOUNT = 6;
+const int COWBOY_HP = 110;
+const int COWBOY_DAMAGE = 10;
 
 namespace ariel {
     class Cowboy: public Character{
         private:
         int bulletsLeft;
         public:
-        Cowboy(string name, Point location);
-        ~Cowboy()= default;
-        bool hasboolets();
+        //Constructor
+        Cowboy(const std::string &name, Point location):Character(name, location, COWBOY_HP), bulletsLeft(BULLETS_AMOUNT){}
+        //methods
+        bool hasboolets() const;
         void reload();
         void shoot(Character *enemey);
-        string print() override;
-
+        //getter
+        int getBullets() const;
+        //print override method
+        string print() const override;
      };
 };
  #endif

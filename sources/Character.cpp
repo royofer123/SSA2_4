@@ -1,52 +1,43 @@
 #include "Character.hpp"
+#include <stdexcept>
 #include <string>
 using namespace ariel;
 using namespace std;
-// Constructor
-Character::Character(string name, Point &location, int healthPoints):name(name) , location(location), healthPoints(healthPoints){ }
-// Copy Constructor
-Character::Character(Character& other)
-    : name(other.name), location(other.location), healthPoints(other.healthPoints) {}  
-  // Implement Character move
-Character::Character(Character&& other) noexcept
-    : name(std::move(other.name)), location(other.location), healthPoints(other.healthPoints) {
-}
-Character& Character::operator=(Character&& other) noexcept {
-    if (this != &other) {
-        name = std::move(other.name);
-        location = other.location;
-        healthPoints = other.healthPoints;
-    }
-    return *this;
-}
- bool Character:: isAlive(){
-    return this->healthPoints>0;
+
+ bool Character:: isAlive() const{
+    return healthPoints>0;
  }
- double Character:: distance(Character* other){
-    return this->location.distance(other->location);
+ double Character:: distance(Character* other)const{
+    return location.distance(other->location);
  }
 
- void Character:: hit(int hitting_points){
-    healthPoints-=hitting_points;
-    if( this->healthPoints<0) this->healthPoints=0;
+ void Character:: hit(int hittingPoints){
+   if(hittingPoints<0) throw invalid_argument ("Damage can't be negative");
+   if(isAlive()){
+       if (hittingPoints >= healthPoints) {
+            healthPoints = 0;
+        }
+            healthPoints -= hittingPoints;  
+   }
  }
- string Character::getName(){
+ string Character::getName() const{
     return this->name;
  }
- Point Character::getLocation(){
+ Point Character::getLocation()const{
     return this->location;
  }
- string Character::print(){
-    string info = "Name: " + this->name + "\n";
-    info += "Health Points: " + to_string(this->healthPoints) + "\n";
-    info += "Location: (" + to_string(this->location.getX()) + ", " + to_string(this->location.getY()) + ")";
-    return info;
+ int Character :: getHealhPoints () const {
+    return healthPoints;
+  }
+ bool& Character :: getIsInteam () {
+    return isInTeam;
  }
 
- Character& Character::operator=(const Character& other){
-    if(this==&other) return *this;
-    this->name=other.name;
-    this->location=other.location;
-    this->healthPoints=other.healthPoints;
-    return *this;
+ void Character :: setLocation (Point location) { 
+   this->location = location;
  }
+ void Character :: setHitPoints (int healthPoints) { 
+   this->healthPoints = healthPoints;
+ }
+
+ 

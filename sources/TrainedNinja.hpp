@@ -10,9 +10,8 @@ namespace ariel {
 
     public:
         // Constructors.
-        TrainedNinja (string name, Point location) :
-            Ninja((name), TRAINED_NINJA_HP,location,  TRAINED_NINJA_SPEED) {}
+        TrainedNinja (const std::string &name, Point location) :
+            Ninja(name, location,TRAINED_NINJA_HP,  TRAINED_NINJA_SPEED) {}
     };
-}
-
+   };
 #endif 
