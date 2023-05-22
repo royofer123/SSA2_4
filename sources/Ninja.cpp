@@ -13,7 +13,7 @@ void Ninja::slash(Character* other) const{
     if(other->isAlive()==false) throw runtime_error ("Can't slash a dead enemey");
     if(!isAlive()) throw runtime_error ("Can't slashing im in heaven");
     if(this==other) throw runtime_error ("I can't slash myself, im scared");
-    if (getLocation().distance(other -> getLocation()) <= 1) {
+    if (getLocation().distance(other -> getLocation()) < 1) {
         other -> hit (NINJA_DMG);
     }   
 }
